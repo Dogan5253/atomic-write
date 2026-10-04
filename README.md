@@ -33,3 +33,10 @@ This library trades a small amount of disk overhead (the temporary file) for the
 - `data` (string | Buffer | Uint8Array): content to write.
 - Returns a `Promise<void>` that resolves when the file has been atomically replaced.
 - Rejects if the directory does not exist, the file cannot be written, or the rename fails.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
