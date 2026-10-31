@@ -1,6 +1,6 @@
 {
   "name": "atomic-write",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Prevents partial file reads via atomic writes.",
   "type": "module",
   "main": "src/index.js",
